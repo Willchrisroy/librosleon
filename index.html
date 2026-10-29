@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros León | Libros para aprender, disfrutar y crecer</title>
+    <meta name="description" content="Libros León - Librería con catálogo de libros educativos, financieros, novelas y desarrollo personal en Chile. Promociones especiales y atención cercana por WhatsApp.">
+    
+    <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#FAF7F2',
+                            100: '#F4ECE1',
+                            200: '#E6D7C3',
+                            300: '#D5BEA1',
+                            400: '#C2A17E',
+                            500: '#A4805A',
+                            600: '#846240',
+                            700: '#64482F',
+                            800: '#483321',
+                            900: '#2C1D11',
+                            dark: '#1C130B'
+                        },
+                        accent: {
+                            DEFAULT: '#C27D38',
+                            hover: '#A96827',
+                            light: '#FEF6ED',
+                            green: '#25D366',
+                            greenHover: '#1DA851'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF7F2;
+            color: #2C1D11;
+        }
+        h1, h2, h3, h4, .font-editorial {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        
+        /* Subtle texture background for editorial feel */
+        .bg-paper {
+            background-color: #FAF7F2;
+            background-image: radial-gradient(#E6D7C3 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+        }
+
+        .bg-wood-dark {
+            background: linear-gradient(135deg, #2C1D11 0%, #1C130B 100%);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4ECE1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C2A17E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #846240;
+        }
+
+        /* Pulse glow for floating WA */
+        @keyframes subtlePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.6); }
+        }
+        .animate-wa-pulse {
+            animation: subtlePulse 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-paper text-brand-900 flex flex-col min-h-screen antialiased selection:bg-brand-200 selection:text-brand-900">
+
+    <aside class="bg-brand-900 text-brand-100 text-xs sm:text-sm py-2 px-4 text-center border-b border-brand-800 flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-accent-green animate-ping"></span>
+        <p class="font-medium">
+            <span class="hidden sm:inline">📖 <strong>Libros León:</strong> "Un libro puede abrir una nueva puerta al conocimiento." &bull; </span>
+            <span>Atención cercana & envíos directos &bull; WhatsApp: <strong>+56 9 4509 0116</strong></span>
+        </p>
+    </aside>
+
+    <header class="sticky top-0 z-40 bg-brand-50/95 backdrop-blur-md border-b border-brand-200 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo Brand -->
+                <a href="#inicio" onclick="navigateTo('inicio')" class="flex items-center gap-3 group focus:outline-none">
+                    <img src="logoo.jpg" alt="Logo Libros León" class="w-12 h-12 rounded-full object-cover shadow-md border-2 border-brand-300 group-hover:border-accent group-hover:scale-105 transition-all duration-300">
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold tracking-tight text-brand-900 leading-none group-hover:text-accent transition-colors">Libros León</span>
+                        <span class="text-[10px] tracking-widest uppercase font-semibold text-brand-600 mt-1">Venta de Libros Online</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-brand-800">
+                    <a href="#inicio" onclick="navigateTo('inicio')" class="hover:text-accent transition-colors py-1 border-b-2 border-transparent hover:border-accent">Inicio</a>
+                    <a href="#catalogo" onclick="navigateTo('catalogo')" class="hover:text-accent transition-colors py-1 border-b-2 border-transparent hover:border-accent">Libros</a>
+                    <a href="#categorias" onclick="navigateTo('categorias')" class="hover:text-accent transition-colors py-1 border-b-2 border-transparent hover:border-accent">Categorías</a>
+                    <a href="#oferta-dia" onclick="navigateTo('oferta-dia')" class="hover:text-accent transition-colors py-1 border-b-2 border-transparent hover:border-accent flex items-center gap-1.5 font-semibold text-accent">
+                        <i class="fa-solid fa-fire text-xs"></i> Ofertas
+                    </a>
+                    <a href="#nosotros" onclick="navigateTo('nosotros')" class="hover:text-accent transition-colors py-1 border-b-2 border-transparent hover:border-accent">Sobre Nosotros</a>
+                    <a href="#contacto" onclick="navigateTo('contacto')" class="hover:text-accent transition-colors py-1 border-b-2 border-transparent hover:border-accent">Contacto</a>
+                </nav>
+
+                <!-- Header Action Buttons -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a id="headerWaBtn" href="https://wa.me/56945090116?text=Hola,%20Libros%20Le%C3%B3n.%20Me%20gustar%C3%ADa%20consultar%20por%20un%20libro." target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-2 bg-accent-green hover:bg-accent-greenHover text-white px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider shadow-sm transition-all duration-200 transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Consultar por WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button type="button" onclick="toggleMobileMenu()" id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-brand-800 hover:bg-brand-100 focus:outline-none" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-50 border-b border-brand-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#inicio" onclick="navigateTo('inicio'); toggleMobileMenu();" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">Inicio</a>
+            <a href="#catalogo" onclick="navigateTo('catalogo'); toggleMobileMenu();" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">Libros</a>
+            <a href="#categorias" onclick="navigateTo('categorias'); toggleMobileMenu();" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">Categorías</a>
+            <a href="#oferta-dia" onclick="navigateTo('oferta-dia'); toggleMobileMenu();" class="block px-3 py-2 rounded-md text-base font-semibold text-accent hover:bg-brand-100">🔥 Oferta del Día</a>
+            <a href="#nosotros" onclick="navigateTo('nosotros'); toggleMobileMenu();" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">Sobre Nosotros</a>
+            <a href="#contacto" onclick="navigateTo('contacto'); toggleMobileMenu();" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">Contacto</a>
+            
+            <div class="pt-4 border-t border-brand-200">
+                <a href="https://wa.me/56945090116?text=Hola,%20Libros%20Le%C3%B3n.%20Me%20gustar%C3%ADa%20consultar%20por%20un%20libro." target="_blank" rel="noopener noreferrer"
+                   class="w-full flex items-center justify-center gap-2 bg-accent-green hover:bg-accent-greenHover text-white px-4 py-3 rounded-lg font-bold text-sm shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Contactar por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow">
+
+        <section id="inicio" class="relative overflow-hidden bg-brand-900 text-brand-50 py-16 lg:py-24 border-b border-brand-800">
+            <!-- Background Editorial Styling -->
+            <div class="absolute inset-0 opacity-15 pointer-events-none" 
+                 style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center;">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-900/90 to-brand-900/70"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Content Text -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-brand-800/80 border border-brand-700/60 px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-200 tracking-wider uppercase">
+                            <i class="fa-solid fa-book-bookmark text-accent"></i>
+                            <span>Librería Digital en Chile</span>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6">
+                            <img src="Leonlector.png" alt="Mascota León Lector Libros León" class="w-32 h-32 sm:w-40 sm:h-40 object-contain filter drop-shadow-xl hover:scale-105 transition-transform duration-300 shrink-0">
+                            <div class="text-center lg:text-left">
+                                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
+                                    Libros León
+                                </h1>
+                                <span class="block text-xl sm:text-2xl lg:text-3xl font-normal text-brand-200 italic mt-1">
+                                    Libros para aprender, disfrutar y crecer.
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-brand-200 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                            Descubre libros educativos, financieros, novelas y mucho más. Encuentra tu próxima lectura a precios sencillos y promociones especiales con atención rápida y personalizada.
+                        </p>
+
+                        <!-- Hero CTAs -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#catalogo" onclick="navigateTo('catalogo')" 
+                               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-hover text-white px-7 py-3.5 rounded-lg font-semibold text-base shadow-lg shadow-accent/20 transition-all duration-300 transform hover:-translate-y-0.5">
+                                <i class="fa-solid fa-book-open"></i>
+                                <span>Ver libros</span>
+                            </a>
+                            
+                            <a href="#oferta-dia" onclick="navigateTo('oferta-dia')" 
+                               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-800/90 hover:bg-brand-700 text-brand-100 border border-brand-600/50 px-6 py-3.5 rounded-lg font-medium text-base transition-all">
+                                <i class="fa-solid fa-fire text-amber-400"></i>
+                                <span>Ver oferta del día</span>
+                            </a>
+                        </div>
+
+                        <!-- Mini Value Badges -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8 border-t border-brand-800/80 text-xs text-brand-300">
+                            <div class="flex items-center gap-2 justify-center lg:justify-start">
+                                <i class="fa-solid fa-check text-accent text-sm"></i>
+                                <span>Precios transparentes</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center lg:justify-start">
+                                <i class="fa-solid fa-check text-accent text-sm"></i>
+                                <span>Atención por WhatsApp</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center lg:justify-start col-span-2 sm:col-span-1">
+                                <i class="fa-solid fa-check text-accent text-sm"></i>
+                                <span>Compromiso real</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual Card Showcase -->
+                    <div class="lg:col-span-5 relative flex justify-center">
+                        <div class="relative w-full max-w-sm rounded-2xl bg-brand-800/50 p-6 border border-brand-700/50 backdrop-blur-sm shadow-2xl">
+                            
+                            <div class="aspect-[3/4] overflow-hidden rounded-lg bg-brand-900 shadow-md mb-4 relative group">
+                                <img id="heroBookCover" src="Oferta_ Pack de dos libros financieros 2.jpg" 
+                                     alt="Pack de 2 Libros Financieros a Elección - Libros León" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-3 left-3 right-3 text-white">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-accent/90 px-2 py-0.5 rounded text-white inline-block mb-1">Especial del mes</span>
+                                    <h3 class="font-serif font-bold text-lg leading-snug">Pack 2 Libros Financieros</h3>
+                                    <p class="text-xs text-brand-200">A elección de nuestro catálogo</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="flex items-baseline justify-between">
+                                    <div class="flex items-baseline gap-2">
+                                        <span class="text-2xl font-bold text-white">$10.990</span>
+                                        <span class="text-sm text-brand-400 line-through">$14.990</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2 py-0.5 rounded">Ahorra $4.000</span>
+                                </div>
+                                <a href="https://wa.me/56945090116?text=Hola,%20estoy%20interesado/a%20en%20el%20Pack%20de%202%20Libros%20Financieros%20a%20elecci%C3%B3n%20por%20$10.990.%20%C2%BFMe%20pueden%20indicar%20disponibilidad%20y%20forma%20de%20compra%3F" target="_blank" rel="noopener noreferrer" 
+                                   class="w-full flex items-center justify-center gap-2 bg-accent-green hover:bg-accent-greenHover text-white py-2.5 rounded-lg text-sm font-bold shadow transition-colors">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    <span>Comprar por WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="oferta-dia" class="py-16 bg-brand-100/60 border-b border-brand-200 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 text-accent font-bold text-xs uppercase tracking-widest mb-1">
+                            <i class="fa-solid fa-bolt text-amber-500"></i> Oportunidad Especial
+                        </div>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900">OFERTA DEL DÍA</h2>
+                        <p class="text-brand-700 text-sm mt-1">Una selección destacada con descuento exclusivo por tiempo limitado.</p>
+                    </div>
+                    <div class="text-xs text-brand-600 bg-brand-200/60 px-3 py-1.5 rounded-full inline-flex items-center gap-2 self-start md:self-auto">
+                        <i class="fa-regular fa-clock"></i> Renovación periódica de catálogo
+                    </div>
+                </div>
+
+                <!-- Daily Deal Main Card -->
+                <div class="bg-white rounded-2xl border border-brand-200 shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 gap-0">
+                    
+                    <!-- Book Cover Image Column -->
+                    <div class="md:col-span-6 lg:col-span-6 bg-brand-200/40 p-4 sm:p-6 lg:p-8 flex items-center justify-center relative min-h-[420px] lg:min-h-[500px]">
+                        <span class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold tracking-wider px-3 py-1 rounded-full shadow z-10">
+                            SÚPER OFERTA - 20% OFF
+                        </span>
+                        <div class="relative group w-full h-full flex items-center justify-center">
+                            <img id="dealImage" src="Súper oferta de libros financieros.jpeg" 
+                                 alt="Súper oferta de 4 libros financieros - Libros León" 
+                                 class="w-full max-h-[480px] lg:max-h-[560px] rounded-lg shadow-2xl transition-transform duration-300 group-hover:scale-102 object-contain">
+                        </div>
+                    </div>
+
+                    <!-- Book Details & Buying Action Column -->
+                    <div class="md:col-span-6 lg:col-span-6 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center gap-2 text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">
+                                <span class="bg-brand-100 text-brand-800 px-2.5 py-0.5 rounded border border-brand-200" id="dealCategory">Finanzas</span>
+                                <span>&bull;</span>
+                                <span class="text-emerald-700 font-bold" id="dealStock"><i class="fa-solid fa-circle-check text-[10px]"></i> Disponible hasta agotar stock</span>
+                            </div>
+
+                            <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-900 mb-2 leading-tight" id="dealTitle">
+                                Pack de 4 Libros Financieros a Elección
+                            </h3>
+                            <p class="text-brand-600 font-medium text-sm sm:text-base mb-4" id="dealAuthor">Por Libros León</p>
+                            
+                            <p class="text-brand-800 text-sm sm:text-base leading-relaxed mb-6" id="dealDescription">
+                                Llévate una combinación perfecta para potenciar tu educación financiera, mentalidad de riqueza y hábitos de éxito. Selecciona los 4 títulos que prefieras de nuestro catálogo financiero y de desarrollo.
+                            </p>
+
+                            <!-- Pricing Box -->
+                            <div class="p-4 sm:p-5 rounded-xl bg-brand-50 border border-brand-200 flex flex-wrap items-center justify-between gap-4">
+                                <div>
+                                    <span class="text-xs text-brand-600 block uppercase font-bold tracking-wider">Precio Promocional</span>
+                                    <div class="flex items-baseline gap-3">
+                                        <span class="text-3xl sm:text-4xl font-bold text-brand-900" id="dealPromoPrice">$19.990</span>
+                                        <span class="text-base sm:text-lg text-brand-500 line-through" id="dealRegularPrice">$24.990</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs sm:text-sm font-extrabold text-white bg-accent px-3.5 py-1.5 rounded-lg block" id="dealSave">
+                                        AHORRA $5.000
+                                    </span>
+                                    <span class="text-[11px] text-brand-600 mt-1 block">Promoción especial</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Actions -->
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                            <a id="dealWaBtn" href="https://wa.me/56945090116?text=Hola,%20vi%20la%20s%C3%BAper%20oferta%20del%20Pack%20de%204%20libros%20financieros%20a%20elecci%C3%B3n%20por%20$19.990.%20%C2%BFC%C3%B3mo%20puedo%20comprarla%3F" target="_blank" rel="noopener noreferrer" 
+                               class="flex-1 inline-flex items-center justify-center gap-3 bg-accent-green hover:bg-accent-greenHover text-white px-6 py-4 rounded-lg font-bold text-base sm:text-lg shadow-md transition-all">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Quiero esta oferta</span>
+                            </a>
+                            <a href="#contacto" onclick="navigateTo('contacto')" 
+                               class="inline-flex items-center justify-center gap-2 bg-brand-100 hover:bg-brand-200 text-brand-800 px-5 py-4 rounded-lg font-semibold text-sm transition-colors border border-brand-300">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span>Consultar catálogo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="categorias" class="py-16 bg-paper border-b border-brand-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-accent text-xs font-bold uppercase tracking-widest">Explora por tema</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900 mt-1">CATEGORÍAS DE LIBROS</h2>
+                    <p class="text-brand-700 text-sm mt-2">Encuentra exactamente la materia o género que buscas para tu próximo aprendizaje o entretenimiento.</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                    
+                    <!-- Category 1: Educación -->
+                    <button onclick="filterCategory('Educación')" class="group p-5 bg-white rounded-xl border border-brand-200 hover:border-accent hover:shadow-md transition-all text-center flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-brand-100 group-hover:bg-accent group-hover:text-white text-brand-800 flex items-center justify-center text-xl mb-3 transition-colors">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-brand-900 text-base group-hover:text-accent">EDUCACIÓN</h3>
+                        <p class="text-[11px] text-brand-600 mt-1">Textos para aprender y ampliar saberes</p>
+                    </button>
+
+                    <!-- Category 2: Finanzas -->
+                    <button onclick="filterCategory('Finanzas')" class="group p-5 bg-white rounded-xl border border-brand-200 hover:border-accent hover:shadow-md transition-all text-center flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-brand-100 group-hover:bg-accent group-hover:text-white text-brand-800 flex items-center justify-center text-xl mb-3 transition-colors">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-brand-900 text-base group-hover:text-accent">FINANZAS</h3>
+                        <p class="text-[11px] text-brand-600 mt-1">Dinero, economía y emprendimiento</p>
+                    </button>
+
+                    <!-- Category 3: Novelas -->
+                    <button onclick="filterCategory('Novelas')" class="group p-5 bg-white rounded-xl border border-brand-200 hover:border-accent hover:shadow-md transition-all text-center flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-brand-100 group-hover:bg-accent group-hover:text-white text-brand-800 flex items-center justify-center text-xl mb-3 transition-colors">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-brand-900 text-base group-hover:text-accent">NOVELAS</h3>
+                        <p class="text-[11px] text-brand-600 mt-1">Historias para disfrutar e imaginar</p>
+                    </button>
+
+                    <!-- Category 4: Desarrollo Personal -->
+                    <button onclick="filterCategory('Desarrollo Personal')" class="group p-5 bg-white rounded-xl border border-brand-200 hover:border-accent hover:shadow-md transition-all text-center flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-brand-100 group-hover:bg-accent group-hover:text-white text-brand-800 flex items-center justify-center text-xl mb-3 transition-colors">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-brand-900 text-base group-hover:text-accent">DESARROLLO</h3>
+                        <p class="text-[11px] text-brand-600 mt-1">Crecimiento, mente y conocimiento</p>
+                    </button>
+
+                    <!-- Category 5: Variedad -->
+                    <button onclick="filterCategory('Variedad')" class="group p-5 bg-white rounded-xl border border-brand-200 hover:border-accent hover:shadow-md transition-all text-center flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-brand-100 group-hover:bg-accent group-hover:text-white text-brand-800 flex items-center justify-center text-xl mb-3 transition-colors">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-brand-900 text-base group-hover:text-accent">VARIEDAD</h3>
+                        <p class="text-[11px] text-brand-600 mt-1">Selección diversa de textos varios</p>
+                    </button>
+
+                    <!-- Category 6: Ofertas -->
+                    <button onclick="filterCategory('Ofertas')" class="group p-5 bg-amber-50 rounded-xl border border-amber-300 hover:border-accent hover:shadow-md transition-all text-center flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-amber-200 group-hover:bg-accent group-hover:text-white text-amber-900 flex items-center justify-center text-xl mb-3 transition-colors">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-amber-900 text-base group-hover:text-accent">OFERTAS</h3>
+                        <p class="text-[11px] text-amber-800 mt-1">Precios promocionales especiales</p>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo" class="py-16 bg-white border-b border-brand-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                    <div>
+                        <span class="text-accent text-xs font-bold uppercase tracking-widest">Colección Disponible</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900">CATÁLOGO DE LIBROS</h2>
+                        <p class="text-brand-700 text-sm mt-1">Explora nuestros títulos disponibles con precios claros y consulta directa.</p>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="w-full md:w-80 relative">
+                        <label for="searchInput" class="sr-only">Buscar libro</label>
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-400"></i>
+                        <input type="text" id="searchInput" oninput="handleSearch()" 
+                               placeholder="¿Qué libro estás buscando?" 
+                               class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-brand-300 bg-brand-50 text-sm text-brand-900 placeholder-brand-400 focus:outline-none focus:ring-2 focus:ring-accent focus:bg-white transition-all">
+                    </div>
+                </div>
+
+                <!-- Filter Pills -->
+                <div class="flex flex-wrap gap-2 mb-8 pb-2 border-b border-brand-100 overflow-x-auto" id="filterPills">
+                    <button onclick="filterCategory('Todos')" class="filter-pill active border px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-brand-900 text-white border-brand-900">
+                        Todos
+                    </button>
+                    <button onclick="filterCategory('Educación')" class="filter-pill border px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-brand-100/80 text-brand-800 border-brand-300 hover:bg-brand-200">
+                        Educativos
+                    </button>
+                    <button onclick="filterCategory('Finanzas')" class="filter-pill border px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-brand-100/80 text-brand-800 border-brand-300 hover:bg-brand-200">
+                        Financieros
+                    </button>
+                    <button onclick="filterCategory('Novelas')" class="filter-pill border px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-brand-100/80 text-brand-800 border-brand-300 hover:bg-brand-200">
+                        Novelas
+                    </button>
+                    <button onclick="filterCategory('Desarrollo Personal')" class="filter-pill border px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-brand-100/80 text-brand-800 border-brand-300 hover:bg-brand-200">
+                        Desarrollo Personal
+                    </button>
+                    <button onclick="filterCategory('Variedad')" class="filter-pill border px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-brand-100/80 text-brand-800 border-brand-300 hover:bg-brand-200">
+                        Otros textos
+                    </button>
+                    <button onclick="filterCategory('Ofertas')" class="filter-pill border px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-amber-100 text-amber-900 border-amber-300 hover:bg-amber-200">
+                        🔥 Solo Ofertas
+                    </button>
+                </div>
+
+                <!-- Product Grid Container -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="booksGrid">
+                    <!-- Books dynamically generated by JavaScript -->
+                </div>
+
+                <!-- Empty Search State -->
+                <div id="noResults" class="hidden text-center py-16 bg-brand-50 rounded-2xl border border-dashed border-brand-300 my-8">
+                    <i class="fa-solid fa-book-open-reader text-4xl text-brand-400 mb-3 block"></i>
+                    <h3 class="font-serif font-bold text-xl text-brand-900 mb-1">No encontramos coincidencias</h3>
+                    <p class="text-brand-600 text-sm max-w-md mx-auto mb-4">Intenta buscar con otro título, autor o selecciona otra categoría.</p>
+                    <button onclick="resetSearchAndFilters()" class="bg-brand-800 text-white px-5 py-2 rounded-lg text-xs font-semibold hover:bg-brand-900 transition-colors">
+                        Ver todos los libros
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-16 bg-brand-900 text-brand-100 border-b border-brand-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-accent text-xs font-bold uppercase tracking-widest">El valor de un buen libro</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">BENEFICIOS DE LA LECTURA</h2>
+                    <p class="text-brand-300 text-sm mt-2">Cuatro razones esenciales para incorporar nuevas lecturas a tu vida cotidiana.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="p-6 rounded-xl bg-brand-800/60 border border-brand-700/60 space-y-3">
+                        <div class="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center text-2xl">
+                            📖
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white">Lectura</h3>
+                        <p class="text-brand-300 text-sm leading-relaxed">
+                            Descubre nuevas historias e ideas que enriquecen tus momentos cotidianos.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-brand-800/60 border border-brand-700/60 space-y-3">
+                        <div class="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center text-2xl">
+                            🧠
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white">Conocimiento</h3>
+                        <p class="text-brand-300 text-sm leading-relaxed">
+                            Amplía tus conocimientos y aprende nuevos conceptos útiles para tu desarrollo.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-brand-800/60 border border-brand-700/60 space-y-3">
+                        <div class="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center text-2xl">
+                            🎯
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white">Comprensión</h3>
+                        <p class="text-brand-300 text-sm leading-relaxed">
+                            Acércate a contenidos que pueden ayudarte a desarrollar tu visión y análisis.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-brand-800/60 border border-brand-700/60 space-y-3">
+                        <div class="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center text-2xl">
+                            ✨
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white">Wisdom & Fun</h3>
+                        <p class="text-brand-300 text-sm leading-relaxed">
+                            Disfruta de la lectura mientras descubres entretenidas y sabias perspectivas.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-brand-50 border-b border-brand-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-accent text-xs font-bold uppercase tracking-widest">Nuestra Propuesta</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900 mt-1">¿POR QUÉ ELEGIR LIBROS LEÓN?</h2>
+                    <p class="text-brand-700 text-sm mt-2">Trato honesto, precios accesibles y atención directa en cada pedido.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="p-6 bg-white rounded-xl border border-brand-200 shadow-sm space-y-2">
+                        <div class="text-accent text-2xl mb-2">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-brand-900">Precios atractivos</h3>
+                        <p class="text-brand-600 text-xs sm:text-sm leading-relaxed">
+                            Buscamos ofrecer alternativas accesibles y competitivas en todo nuestro catálogo.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-xl border border-brand-200 shadow-sm space-y-2">
+                        <div class="text-accent text-2xl mb-2">
+                            <i class="fa-solid fa-percent"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-brand-900">Promociones</h3>
+                        <p class="text-brand-600 text-xs sm:text-sm leading-relaxed">
+                            Descubre ofertas continuas y oportunidades especiales para ahorrar en tus compras.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-xl border border-brand-200 shadow-sm space-y-2">
+                        <div class="text-accent text-2xl mb-2">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-brand-900">Variedad</h3>
+                        <p class="text-brand-600 text-xs sm:text-sm leading-relaxed">
+                            Encuentra libros educativos, financieros, novelas y diferentes tipos de textos.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-xl border border-brand-200 shadow-sm space-y-2">
+                        <div class="text-accent text-2xl mb-2">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-brand-900">Compromiso real</h3>
+                        <p class="text-brand-600 text-xs sm:text-sm leading-relaxed">
+                            Nuestra prioridad es entregar una atención cercana, responsable y rápida a cada cliente.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="py-16 bg-white border-b border-brand-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-brand-50 rounded-2xl border border-brand-200 p-8 sm:p-12 shadow-sm relative overflow-hidden">
+                    <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-brand-100 rounded-full opacity-50 pointer-events-none"></div>
+                    
+                    <div class="max-w-3xl relative z-10 space-y-6">
+                        <span class="text-accent text-xs font-bold uppercase tracking-widest">Nuestra historia</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900">SOBRE LIBROS LEÓN</h2>
+                        
+                        <div class="space-y-4 text-brand-800 text-base leading-relaxed font-normal">
+                            <p>
+                                <strong>Libros León</strong> nace con el propósito de acercar diferentes tipos de lecturas a personas que buscan aprender, entretenerse y ampliar sus conocimientos.
+                            </p>
+                            <p>
+                                Trabajamos con compromiso hacia nuestros clientes, ofreciendo variedad de textos, precios atractivos y promociones especiales.
+                            </p>
+                            <p>
+                                Nuestro objetivo es que cada persona pueda encontrar una lectura que aporte conocimiento, comprensión o simplemente un buen momento de entretenimiento.
+                            </p>
+                        </div>
+
+                        <div class="pt-4 flex items-center gap-4">
+                            <img src="logoo.jpg" alt="Emblema Libros León" class="w-14 h-14 rounded-full border-2 border-brand-300 shadow-sm object-cover">
+                            <div>
+                                <span class="font-serif font-bold text-brand-900 block text-lg">Libros León</span>
+                                <span class="text-xs text-brand-600">Compromiso con nuestros clientes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="py-12 bg-paper border-b border-brand-200 hidden">
+            <!-- Structure ready for real future customer reviews -->
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h3 class="font-serif text-2xl font-bold">Opiniones de Nuestros Lectores</h3>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-16 bg-paper">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-brand-900 rounded-2xl text-white p-8 sm:p-12 shadow-2xl relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-4">
+                        <span class="text-accent text-xs font-bold uppercase tracking-widest">Atención inmediata</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold">CONTACTO LIBROS LEÓN</h2>
+                        <p class="text-brand-200 text-sm sm:text-base leading-relaxed">
+                            ¿Buscas un libro en específico o tienes preguntas sobre stock y compras? Escríbenos directamente y te responderemos a la brevedad.
+                        </p>
+
+                        <div class="pt-2 space-y-3">
+                            <div class="flex items-center gap-3 text-brand-100 font-medium">
+                                <div class="w-10 h-10 rounded-lg bg-accent-green/20 text-accent-green flex items-center justify-center text-xl">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-brand-300 block">WhatsApp Directo</span>
+                                    <span class="text-lg font-bold text-white">+56 9 4509 0116</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 flex flex-col items-center justify-center bg-brand-800/80 p-6 rounded-xl border border-brand-700">
+                        <p class="text-center text-xs text-brand-300 mb-4">Haz clic abajo para iniciar la conversación en WhatsApp sin agregar manualmente el número:</p>
+                        
+                        <a href="https://wa.me/56945090116?text=Hola,%20Libros%20Le%C3%B3n.%20Me%20gustar%C3%ADa%20consultar%20por%20un%20libro." 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full flex items-center justify-center gap-3 bg-accent-green hover:bg-accent-greenHover text-white py-3.5 px-6 rounded-lg font-bold text-base shadow-lg transition-all">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Hablar por WhatsApp</span>
+                        </a>
+
+                        <p class="text-[11px] text-brand-400 mt-4 text-center">
+                            Te responderemos con la disponibilidad y las formas de pago de inmediato.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-brand-dark text-brand-300 border-t border-brand-800 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-brand-800">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <img src="logoo.jpg" alt="Logo Libros León" class="w-10 h-10 rounded-full border border-brand-500 object-cover">
+                        <span class="font-serif text-xl font-bold text-white">Libros León</span>
+                    </div>
+                    <p class="text-xs text-brand-400 italic">"Compromiso con nuestros clientes."</p>
+                    <p class="text-xs text-brand-400 leading-relaxed">
+                        Librería con variedad de textos educativos, financieros, novelas y conocimiento en Chile.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-4 uppercase tracking-wider">Navegación</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" onclick="navigateTo('inicio')" class="hover:text-accent transition-colors">Inicio</a></li>
+                        <li><a href="#catalogo" onclick="navigateTo('catalogo')" class="hover:text-accent transition-colors">Libros</a></li>
+                        <li><a href="#categorias" onclick="navigateTo('categorias')" class="hover:text-accent transition-colors">Categorías</a></li>
+                        <li><a href="#oferta-dia" onclick="navigateTo('oferta-dia')" class="hover:text-accent transition-colors">Ofertas del Día</a></li>
+                        <li><a href="#nosotros" onclick="navigateTo('nosotros')" class="hover:text-accent transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#contacto" onclick="navigateTo('contacto')" class="hover:text-accent transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Details -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-4 uppercase tracking-wider">Atención Directa</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-accent-green"></i>
+                            <span>+56 9 4509 0116</span>
+                        </li>
+                        <li class="text-brand-400 text-[11px] pt-1">
+                            Respuesta rápida vía WhatsApp para consultas de libros y precios.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Informative note -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-4 uppercase tracking-wider">Garantía de Atención</h4>
+                    <p class="text-xs text-brand-400 leading-relaxed">
+                        Atención directa y cercana. Precios transparentes publicados sin sorpresas.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-500 gap-4">
+                <p>&copy; <span id="currentYear"></span> Libros León. Todos los derechos reservados.</p>
+                <p class="text-[11px]">Compromiso con nuestros clientes &bull; Chile</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/56945090116?text=Hola,%20Libros%20Le%C3%B3n.%20Me%20gustar%C3%ADa%20consultar%20por%20un%20libro." 
+           target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp"
+           class="flex items-center gap-3 bg-accent-green hover:bg-accent-greenHover text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl animate-wa-pulse transition-all duration-300 transform hover:scale-105">
+            <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
+            <span class="hidden sm:inline font-bold text-sm tracking-wide">Consultar por WhatsApp</span>
+        </a>
+    </div>
+
+    <div id="productModal" class="fixed inset-0 z-50 hidden bg-brand-900/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-brand-200 overflow-hidden my-8 animate-fade-in">
+            
+            <!-- Modal Close Button -->
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-brand-100 hover:bg-brand-200 text-brand-800 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
+                <!-- Modal Cover Image -->
+                <div class="sm:col-span-5 flex flex-col items-center">
+                    <img id="modalCover" src="" alt="Portada libro" class="w-full max-w-[200px] sm:max-w-none rounded-lg shadow-lg border border-brand-100 object-cover aspect-[3/4]">
+                    <span id="modalStockBadge" class="mt-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
+                        Disponible
+                    </span>
+                </div>
+
+                <!-- Modal Info -->
+                <div class="sm:col-span-7 space-y-4">
+                    <div>
+                        <span id="modalCategory" class="text-xs font-bold text-accent uppercase tracking-wider bg-brand-100 px-2.5 py-0.5 rounded">Categoría</span>
+                        <h3 id="modalTitle" class="font-serif text-2xl font-bold text-brand-900 mt-2 leading-tight">Título del Libro</h3>
+                        <p id="modalAuthor" class="text-sm font-medium text-brand-600 mt-0.5">Autor</p>
+                    </div>
+
+                    <p id="modalDescription" class="text-xs sm:text-sm text-brand-800 leading-relaxed">
+                        Descripción extendida del libro.
+                    </p>
+
+                    <!-- Pricing Box -->
+                    <div class="p-4 bg-brand-50 rounded-xl border border-brand-200 space-y-1">
+                        <div class="flex items-baseline gap-3">
+                            <span id="modalPromoPrice" class="text-2xl font-bold text-brand-900">$0</span>
+                            <span id="modalRegularPrice" class="text-sm text-brand-400 line-through hidden">$0</span>
+                        </div>
+                        <div id="modalSaveBadge" class="text-xs font-bold text-emerald-700 hidden">
+                            ¡Ahorras en esta oferta!
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a id="modalWaBtn" href="#" target="_blank" rel="noopener noreferrer" 
+                       class="w-full flex items-center justify-center gap-2 bg-accent-green hover:bg-accent-greenHover text-white py-3 px-4 rounded-lg font-bold text-sm shadow transition-colors">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Comprar / Consultar por WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const booksDatabase = [
+            {
+                id: 'habitos-atomicos',
+                title: 'Hábitos Atómicos',
+                author: 'James Clear',
+                category: 'Desarrollo Personal',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: true,
+                stock: true,
+                cover: 'habitos_atomicos.jpeg',
+                description: 'Un método práctico y comprobado para crear buenos hábitos y romper los malos. Una lectura transformadora diseñada para quienes buscan crecer, organizarse y mejorar sus resultados diarios paso a paso.'
+            },
+            {
+                id: 'padre-rico-padre-pobre',
+                title: 'Padre Rico, Padre Pobre',
+                author: 'Robert Kiyosaki',
+                category: 'Finanzas',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'padre_rico_padre_pobre.jpeg',
+                description: 'El clásico de educación financiera personal. Destruye mitos sobre el dinero y enseña cómo hacer que el dinero trabaje para ti en lugar de trabajar por dinero.'
+            },
+            {
+                id: 'psicologia-del-dinero',
+                title: 'La Psicología del Dinero',
+                author: 'Morgan Housel',
+                category: 'Finanzas',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'la_psicologia_del_dinero.jpg',
+                description: '19 historias breves que exploran las formas extrañas en que las personas piensan sobre el dinero y te enseñan a tomar mejores decisiones financieras.'
+            },
+            {
+                id: 'todas-las-historias-llevan-tu-nombre',
+                title: 'Todas Las Historias Llevan Tu Nombre',
+                author: 'Andrea Longarela',
+                category: 'Novelas',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'todas_las_historias_llevan_tu_nombre.jpeg',
+                description: 'Una emotiva novela romántica que explora los giros del destino, el amor verdadero y la búsqueda de identidad a través de historias entrelazadas.'
+            },
+            {
+                id: 'trading-en-la-zona',
+                title: 'Trading en la Zona',
+                author: 'Mark Douglas',
+                category: 'Finanzas',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'trading_en_la_zona.jpg',
+                description: 'Un clásico fundamental para comprender la psicología del inversionista. Enseña a dominar el mercado con confianza, disciplina y una actitud ganadora.'
+            },
+            {
+                id: 'alas-de-sangre',
+                title: 'Alas de Sangre',
+                author: 'Rebecca Yarros',
+                category: 'Novelas',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'alas_de_sangre.jpeg',
+                description: 'Un fenómeno mundial de fantasía y romance donde jinetes de dragones luchan por sobrevivir en un colegio militar implacable y lleno de peligros.'
+            },
+            {
+                id: 'el-poder-del-ahora',
+                title: 'El Poder del Ahora',
+                author: 'Eckhart Tolle',
+                category: 'Desarrollo Personal',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'el-poder-del-ahora.jpg',
+                description: 'Una guía imprescindible para la iluminación espiritual y el crecimiento personal. Muestra cómo liberarse de la mente, vivir en el presente y encontrar paz interior.'
+            },
+            {
+                id: 'el-poder-de-tu-mente-subconsciente',
+                title: 'El Poder de Tu Mente Subconsciente',
+                author: 'Dr. Joseph Murphy',
+                category: 'Desarrollo Personal',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'elpoder_de_tu_mente_subconciente.jpg',
+                description: 'Un clásico del crecimiento personal que te enseña a enfocar los pensamientos para alcanzar prosperidad, felicidad y paz mental sin límites.'
+            },
+            {
+                id: 'deja-de-ser-tu',
+                title: 'Deja de Ser Tú',
+                author: 'Joe Dispenza',
+                category: 'Desarrollo Personal',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'deja_de_ser_tu.jpg',
+                description: 'Un libro revolucionario que combina física cuántica, neurociencia y biología para explicar cómo reprogramar tu mente y crear la realidad que deseas.'
+            },
+            {
+                id: '50-capsulas-de-amor-propio',
+                title: '50 Cápsulas de Amor Propio',
+                author: 'Sara Espejo',
+                category: 'Desarrollo Personal',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: '50-capsulas-de-amor-propio--sara-espejo.jpg',
+                description: 'Múltiples maneras de llegar a ti. Una obra inspiradora repleta de reflexiones cotidianas y herramientas prácticas para sanar la relación contigo, cultivar tu autoestima y encontrar bienestar interior.'
+            },
+            {
+                id: 'si-lo-crees-lo-creas',
+                title: 'Si Lo Crees, Lo Creas',
+                author: 'Brian Tracy & Christina Stein',
+                category: 'Desarrollo Personal',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'si_lo_crees_lo_creas.png',
+                description: 'Elimina tus dudas, cambia tus creencias y suelta el pasado para alcanzar todo tu potencial. Un libro imprescindible para transformar patrones negativos y lograr tus metas.'
+            },
+            {
+                id: 'el-monje-que-vendio-su-ferrari',
+                title: 'El Monje Que Vendió Su Ferrari',
+                author: 'Robin Sharma',
+                category: 'Desarrollo Personal',
+                regularPrice: 9990,
+                promoPrice: 5990,
+                isOfferOfDay: false,
+                stock: true,
+                cover: 'el-monje-que-vendio-su-ferrari.jpg',
+                description: 'Una fábula espiritual sobre cómo transformar tu vida, cultivar la mente, valorar el tiempo y vivir con equilibrio, propósito y pasión.'
+            }
+        ];
+
+        let currentFilter = 'Todos';
+        let searchQuery = '';
+
+        // WhatsApp Phone Configuration
+        const WA_PHONE = '56945090116';
+
+        function formatCLP(amount) {
+            return '$' + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        function createWaUrl(text) {
+            return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(text)}`;
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById('booksGrid');
+            const noResults = document.getElementById('noResults');
+            grid.innerHTML = '';
+
+            const filtered = booksDatabase.filter(book => {
+                const matchesFilter = (currentFilter === 'Todos') || 
+                                     (currentFilter === 'Ofertas' && book.promoPrice !== null) ||
+                                     (book.category === currentFilter);
+                
+                const matchesSearch = book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                      book.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                      book.category.toLowerCase().includes(searchQuery.toLowerCase());
+
+                return matchesFilter && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                
+                filtered.forEach(book => {
+                    const hasDiscount = book.promoPrice !== null;
+                    const displayPrice = hasDiscount ? book.promoPrice : book.regularPrice;
+                    const savings = hasDiscount ? (book.regularPrice - book.promoPrice) : 0;
+                    
+                    const waMessage = `Hola, estoy interesado/a en el libro ${book.title}. ¿Me pueden indicar disponibilidad y forma de compra?`;
+                    const waUrl = createWaUrl(waMessage);
+
+                    const cardHtml = `
+                        <div class="bg-white rounded-xl border border-brand-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                            
+                            <div>
+                                <!-- Image & Tags -->
+                                <div class="relative aspect-[3/4] bg-brand-100 overflow-hidden cursor-pointer" onclick="openBookModal('${book.id}')">
+                                    <img src="${book.cover}" alt="${book.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-brand-900/10 group-hover:bg-transparent transition-colors"></div>
+                                    
+                                    ${hasDiscount ? `
+                                        <span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full shadow">
+                                            OFERTA
+                                        </span>
+                                    ` : ''}
+
+                                    <span class="absolute bottom-3 right-3 bg-brand-900/80 text-brand-100 text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-sm">
+                                        ${book.category}
+                                    </span>
+                                </div>
+
+                                <!-- Text Body -->
+                                <div class="p-5 space-y-2">
+                                    <p class="text-[11px] font-medium text-brand-500 uppercase tracking-wider">${book.author}</p>
+                                    <h3 class="font-serif font-bold text-brand-900 text-lg leading-snug hover:text-accent cursor-pointer transition-colors" onclick="openBookModal('${book.id}')">
+                                        ${book.title}
+                                    </h3>
+                                    <p class="text-brand-600 text-xs line-clamp-2 leading-relaxed">
+                                        ${book.description}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Price & WhatsApp Action -->
+                            <div class="p-5 pt-0 space-y-3">
+                                <div class="p-3 rounded-lg bg-brand-50 border border-brand-100">
+                                    <div class="flex items-baseline justify-between">
+                                        <span class="text-xl font-bold text-brand-900">${formatCLP(displayPrice)}</span>
+                                        ${hasDiscount ? `<span class="text-xs text-brand-400 line-through">${formatCLP(book.regularPrice)}</span>` : ''}
+                                    </div>
+                                    ${hasDiscount ? `
+                                        <div class="text-[10px] font-bold text-emerald-700 mt-0.5">
+                                            AHORRA ${formatCLP(savings)}
+                                        </div>
+                                    ` : `
+                                        <div class="text-[10px] text-brand-500 mt-0.5">Precio claro y transparente</div>
+                                    `}
+                                </div>
+
+                                <a href="${waUrl}" target="_blank" rel="noopener noreferrer" 
+                                   class="w-full inline-flex items-center justify-center gap-2 bg-accent-green hover:bg-accent-greenHover text-white py-2.5 px-4 rounded-lg font-bold text-xs shadow-sm transition-colors">
+                                    <i class="fa-brands fa-whatsapp text-base"></i>
+                                    <span>Consultar por WhatsApp</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    `;
+                    grid.insertAdjacentHTML('beforeend', cardHtml);
+                });
+            }
+        }
+
+        function filterCategory(cat) {
+            currentFilter = cat;
+            
+            // Update active pill styling
+            const pills = document.querySelectorAll('.filter-pill');
+            pills.forEach(pill => {
+                if (pill.textContent.trim().includes(cat) || (cat === 'Todos' && pill.textContent.trim() === 'Todos')) {
+                    pill.className = "filter-pill active border px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-brand-900 text-white border-brand-900";
+                } else {
+                    pill.className = "filter-pill border px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-brand-100/80 text-brand-800 border-brand-300 hover:bg-brand-200";
+                }
+            });
+
+            renderCatalog();
+        }
+
+        function handleSearch() {
+            searchQuery = document.getElementById('searchInput').value;
+            renderCatalog();
+        }
+
+        function resetSearchAndFilters() {
+            document.getElementById('searchInput').value = '';
+            searchQuery = '';
+            filterCategory('Todos');
+        }
+
+        function openBookModal(bookId) {
+            const book = booksDatabase.find(b => b.id === bookId);
+            if (!book) return;
+
+            document.getElementById('modalCover').src = book.cover;
+            document.getElementById('modalCover').alt = book.title;
+            document.getElementById('modalCategory').textContent = book.category;
+            document.getElementById('modalTitle').textContent = book.title;
+            document.getElementById('modalAuthor').textContent = `Por ${book.author}`;
+            document.getElementById('modalDescription').textContent = book.description;
+
+            const hasDiscount = book.promoPrice !== null;
+            const displayPrice = hasDiscount ? book.promoPrice : book.regularPrice;
+
+            document.getElementById('modalPromoPrice').textContent = formatCLP(displayPrice);
+
+            const regPriceEl = document.getElementById('modalRegularPrice');
+            const saveBadgeEl = document.getElementById('modalSaveBadge');
+
+            if (hasDiscount) {
+                regPriceEl.textContent = formatCLP(book.regularPrice);
+                regPriceEl.classList.remove('hidden');
+                saveBadgeEl.textContent = `¡Ahorras ${formatCLP(book.regularPrice - book.promoPrice)} en esta promoción!`;
+                saveBadgeEl.classList.remove('hidden');
+            } else {
+                regPriceEl.classList.add('hidden');
+                saveBadgeEl.classList.add('hidden');
+            }
+
+            const waMsg = `Hola, estoy interesado/a en el libro ${book.title}. ¿Está disponible?`;
+            document.getElementById('modalWaBtn').href = createWaUrl(waMsg);
+
+            document.getElementById('productModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on outside click
+        window.onclick = function(e) {
+            const modal = document.getElementById('productModal');
+            if (e.target === modal) {
+                closeProductModal();
+            }
+        };
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.className = 'fa-solid fa-xmark text-2xl';
+            } else {
+                menu.classList.add('hidden');
+                icon.className = 'fa-solid fa-bars text-2xl';
+            }
+        }
+
+        function navigateTo(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        window.onload = function() {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            renderCatalog();
+        };
+    </script>
+
+</body>
+</html>
